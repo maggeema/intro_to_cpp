@@ -15,6 +15,6 @@ int main(){
     cin >> celsius;
     farenheit = 9.0 / 5 * celsius + 32;
 
-    cout << farenheit;
+    cout << celsius << " degrees celsius is equal to " << farenheit << " degrees farenheit.";
     return 0;
 }
