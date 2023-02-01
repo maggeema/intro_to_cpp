@@ -1,0 +1,19 @@
+Notes: January 30, 2023
+
+indentifers: what we call variable names or function names
+one equal sign is an assignment operator, whereas two equal signs is a boolean
+constants (const): a variable that cannot be changed and must be set when created 
+    ie:
+    const double BOTTLE_VOLUME = 2;
+    // this means that this variable BOTTLE_VOLUME is always going to be 2
+    // in good practice, consts are always capitalized to distinguish them from regular vars
+
+a good reason to use constants:
+    ie:
+    double volume = bottles * 2;
+    // can be rewritten as:
+    const double BOTTLE_VOLUME = 2;    
+    double volume = bottles * BOTTLE_VOLUME;
+
+usually is better to use doubles instead of floats because doubles have 8 bytes of storage
+whereas floats only have 4 bytes of storage
