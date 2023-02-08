@@ -1,0 +1,21 @@
+Notes: February 1, 2023
+
+NOTE: when a string is read with the >> operator, only one word is placed into the string
+variable. 
+    ie: (the input "HARRY POTTER" is typed, but only HARRY is cin'ed)
+.length() takes a variable parameter
+.substr() takes a starting index and the number of indices after the starting index as 
+    parameters
+String literal means anything in double quotes (includes "", " ", or even just a char "A")
+Rule of thumb: the first variable of a concatination must be a variable name and not a 
+    string literal
+    ie: 
+    string str = "C" + "++";
+    // this leads to an error
+range functions are used most often; takes in up to three parameters (if there's more than 
+    that, it'll give ou an error "function overload")
+Unicode: another way to represent characters
+
+array: to initialize an array, the format should be (data type) (variable name) (array size)
+    ie: 
+    int numbers [10];
