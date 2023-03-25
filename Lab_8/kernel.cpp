@@ -1,10 +1,48 @@
 // Author: Maggie Ma
 // Course: CSCI-135
 // Instructor: Genady Maryash
-// Assignment: One-pixel-thick frame
+// Assignment: Kernel method image filtering
 
-// This program draws a white frame exactly in the middle of the picture. The dimensions of
-// the frame should be one pixel thick.
+// A sliding window operator replaces each pixel with some function of its 8 neighbors (and 
+// itself). Consider pixel e and its 8 neighbors (labeled a-i) that form a 3x3 window around it:
+
+// . . . . . .
+// . . . . . .
+// . a b c . . 
+// . d e f . .
+// . g h i . .
+// . . . . . .
+// The operation replaces pixel e (in the middle of the 3x3 window) with some function of its 
+// neighbors f(a,b,c,d,e,f,g,h,i). It is possible to implement blur, edge detection, and many 
+// other image processing operations using this technique.
+
+// References:
+
+// Lode's Computer Graphics Tutorial - Image Filtering
+// Interactive demo for different functions (kernels)
+// For this task, write a program kernel.cpp, which implements a horizontal edge detection 
+// operation. One way to detect horizontal edges is to use the function
+
+// f(a,b,c,d,e,f,g,h,i) = (g+2h+i)-(a+2b+c)
+// (This is one component of the so called Sobel operator, if you want to read more about it.)
+
+// Example:
+
+ 
+// Remark 1: Note that this is a sliding window operator unlike the non-overlapping window 
+// pixelization operator in the previous task. That is, the considered window is always a window 
+// around the pixel whose value is being computed.
+
+// Remark 2: You shouldn't overwrite the original array. Make a new array for the output, and 
+// write the resulting pixel color into the new array.
+
+// Remark 3: There are several ways to handle the pixels on the borders, which don’t have all 8 
+// neighbors available. Come up with any reasonable way to assign their colors (you can assume 
+// that the non-existing neighbors are black, or make the boundary wrap around, or even simply 
+// assign black color to the boundary pixels in the output).
+
+// Remark 4: If the resulting color is less than 0 or greater than 255, make them 0 and 255 
+// respectively, otherwise writeImage function will complain that the colors are out of range.
 
 #include <iostream>
 #include <cassert>
